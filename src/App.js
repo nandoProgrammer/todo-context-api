@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Context from './Context';
+import Counter from './Counter';
 
-function App() {
+export default function App() {
+  const [total, setTotal] = useState(0);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Context.Provider value={[total, setTotal]}>
+      <div>
+        <p>App.js: { total }</p>
+        <p> DevMedia Context API</p>
+        <Counter />
+      </div>
+    </Context.Provider>
   );
 }
-
-export default App;
