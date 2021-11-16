@@ -9,7 +9,6 @@ export default function App() {
     <Context.Provider value={[total, setTotal]}>
       <div>
         <p>App.js: { total }</p>
-        <p> DevMedia Context API</p>
         <Counter />
       </div>
     </Context.Provider>
